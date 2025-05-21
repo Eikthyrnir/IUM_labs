@@ -36,6 +36,9 @@ jobs:
           cd external
           pip install -r requirements.txt
 
+      - name: Copy data folder to external repo
+        run: cp -r ajc external/
+        
       - name: Train model
         run: |
           cd external
@@ -73,6 +76,9 @@ jobs:
         with:
           name: model
           path: external
+
+      - name: Copy data folder to external repo
+        run: cp -r ajc external/
   
       - name: Evaluate model
         run: |
